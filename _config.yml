@@ -1,0 +1,86 @@
+# ------------------------------------------------------------------
+# Site settings
+# ------------------------------------------------------------------
+remote_theme            : "mmistakes/minimal-mistakes@master"
+minimal_mistakes_skin   : "default"   # typography and colours are overridden in assets/css/main.scss
+
+locale                  : "en-US"
+title                   : "Kirstin Oliveira Roster"
+title_separator         : "|"
+name                    : &name "Kirstin Oliveira Roster"
+description             : &description "Infectious disease modeler at the Harvard T.H. Chan School of Public Health."
+url                     : "https://kroster.github.io"
+baseurl                 : ""
+repository              : "KRoster/kroster.github.io"
+words_per_minute        : 200
+
+# Site-wide search (searches page text; handy once the publication list grows)
+search                  : true
+search_full_content     : true
+
+# ------------------------------------------------------------------
+# Author sidebar
+# ------------------------------------------------------------------
+author:
+  name         : *name
+  avatar       : "/assets/images/profile.jpg"
+  bio          : "Infectious disease modeler"
+  location     : "Boston, MA"
+  links:
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=dSmNi-AAAAAJ&hl=en"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/KRoster"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/kirstin-roster/"
+
+# Links repeated in the site footer
+footer:
+  links:
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=dSmNi-AAAAAJ&hl=en"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/KRoster"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/kirstin-roster/"
+
+# ------------------------------------------------------------------
+# Build settings
+# ------------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+include:
+  - _pages
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+plugins:
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-sitemap
+
+# ------------------------------------------------------------------
+# Defaults
+# ------------------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true

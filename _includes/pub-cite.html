@@ -1,0 +1,9 @@
+{%- assign pub = include.pub -%}
+{%- assign authors = pub.authors | replace: 'Oliveira Roster K', '<strong>Oliveira Roster K</strong>' -%}
+<span class="pub-authors">{{ authors }}</span>. <span class="pub-title">{{ pub.title }}</span>. <em class="pub-journal">{{ pub.journal }}</em>. {{ pub.year }}.
+{%- if pub.url %} <a class="pub-link" href="{{ pub.url }}">link</a>
+{%- elsif pub.pmid %} <a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/{{ pub.pmid }}/">PubMed</a>
+{%- endif -%}
+{%- if pub.pmcid %} <a class="pub-link" href="https://www.ncbi.nlm.nih.gov/pmc/articles/{{ pub.pmcid }}/">full text</a>
+{%- endif -%}
+{%- if pub.note %} <span class="pub-note">{{ pub.note }}</span>{%- endif -%}

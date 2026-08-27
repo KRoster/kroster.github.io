@@ -1,0 +1,11 @@
+{%- comment -%}
+Publications belonging to one research theme. Usage:
+  {% include theme-pubs.html theme="t1" %}
+{%- endcomment -%}
+<ul class="pub-list-plain">
+{%- for pub in site.data.publications %}
+{%- if pub.themes contains include.theme %}
+  <li>{% include pub-cite.html pub=pub %}</li>
+{%- endif %}
+{%- endfor %}
+</ul>

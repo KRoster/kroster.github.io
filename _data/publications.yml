@@ -1,0 +1,165 @@
+# ------------------------------------------------------------------------------
+# Publications — single source of truth for the site.
+#
+# The Publications page numbers these automatically, counting DOWN the page, so
+# the newest paper always carries the highest number. The Research page pulls
+# the same entries by `id`, so a citation is only ever written once.
+#
+# To add a paper: add a new block at the TOP of this list and give it a unique
+# `id`. Optionally list which research themes it belongs to (t1-t4, defined in
+# _pages/research.md).
+#
+# Fields:
+#   id       (required) unique short key, referenced from the Research page
+#   authors  (required) as on the paper; "Oliveira Roster K" is bolded for you
+#   title    (required) HTML allowed, e.g. <em>Neisseria gonorrhoeae</em>
+#   journal  (required) rendered in italics
+#   year     (required)
+#   pmid / pmcid       optional; a PMID becomes a PubMed link
+#   url                optional; overrides the PubMed link (e.g. a DOI or preprint)
+#   note               optional; small note shown after the citation
+#   themes             optional; list of theme keys
+# ------------------------------------------------------------------------------
+
+- id: ofid2026-deployment
+  authors: "Oliveira Roster K, Rönn MM, Gorenburg ER, Partl DK, Anderegg N, Abel zur Wiesch P, Au C, Kouyos RD, Martinez FP, Low N, Grad YH"
+  title: "Local prevalence of ceftriaxone resistance informs optimal deployment of new gonorrhea treatments"
+  journal: "Open Forum Infectious Diseases"
+  year: 2026
+  themes: [t1]
+
+- id: cid2026-two-antibiotics
+  authors: "Kline MC, Oliveira Roster K, Helekal D, Rumpler E, Grad YH"
+  title: "Comparing strategies to introduce two new antibiotics for gonorrhea: a modeling study"
+  journal: "Clinical Infectious Diseases"
+  year: 2026
+  themes: [t1]
+
+- id: aje2025-undetected-burden
+  authors: "Oliveira Roster K, Rönn MM, Elder H, Gift TL, Roosevelt KA, Salomon JA, Hsu KK, Grad YH"
+  title: "Estimating the undetected burden of infections and the likelihood of strain persistence of drug-resistant <em>Neisseria gonorrhoeae</em>"
+  journal: "American Journal of Epidemiology"
+  year: 2025
+  pmid: "39673766"
+  themes: [t2]
+
+- id: cid2025-why-declining
+  authors: "Oliveira Roster K, White PJ, Grad YH"
+  title: "Why are gonorrhea case rates declining in the United States? A research agenda"
+  journal: "Clinical Infectious Diseases"
+  year: 2025
+  themes: [t4]
+
+- id: lancetid2024-tetracycline
+  authors: "Oliveira Roster K, Mittelstaedt R, Reyes J, Aatresh AV, Grad YH"
+  title: "Modelling molecular and culture-based surveillance of the prevalence of tetracycline resistance in <em>Neisseria gonorrhoeae</em>"
+  journal: "Lancet Infectious Diseases"
+  year: 2024
+  pmid: "38950558"
+  pmcid: "PMC11283341"
+  themes: [t2]
+
+- id: ploscb2024-variant-surveillance
+  authors: "Oliveira Roster K, Kissler SM, Omoregie E, Wang JC, Amin H, Di Lonardo S, Hughes S, Grad YH"
+  title: "Surveillance strategies for the detection of new pathogen variants across epidemiological contexts"
+  journal: "PLoS Computational Biology"
+  year: 2024
+  pmid: "39236073"
+  pmcid: "PMC11407617"
+  themes: [t2]
+
+- id: plosntd2024-covid-dengue
+  authors: "Oliveira Roster K, Martinelli T, Connaughton C, Santillana M, Rodrigues FA"
+  title: "Impact of the COVID-19 pandemic on dengue in Brazil: interrupted time series analysis of changes in surveillance and transmission"
+  journal: "PLOS Neglected Tropical Diseases"
+  year: 2024
+  pmid: "39724056"
+  pmcid: "PMC11709241"
+  themes: [t4]
+
+- id: cid2024-prescribing-drivers
+  authors: "Kissler SM*, Oliveira Roster K*, Petherbridge R, Mehrotra A, Barnett ML, Grad YH"
+  title: "Drivers of geographic patterns in outpatient antibiotic prescribing in the United States"
+  journal: "Clinical Infectious Diseases"
+  year: 2024
+  pmid: "38509670"
+  pmcid: "PMC11327792"
+  note: "*equal contribution"
+  themes: [t4]
+
+- id: lancetmicrobe2024-doxypep
+  authors: "Oliveira Roster K and Grad YH"
+  title: "Estimating changes in antibiotic consumption in the USA with the introduction of doxycycline post-exposure prophylaxis"
+  journal: "Lancet Microbe"
+  year: 2024
+  pmid: "37883986"
+  themes: [t1]
+
+- id: epidemics2024-environmental-testing
+  authors: "Olejarz JW, Oliveira Roster K, Kissler SM, Lipsitch M, Grad YH"
+  title: "Optimal environmental testing frequency for outbreak surveillance"
+  journal: "Epidemics"
+  year: 2024
+  pmid: "38394927"
+  pmcid: "PMC10979539"
+  themes: [t2]
+
+- id: csf2024-related-cities
+  authors: "Lober L, Oliveira Roster K, Rodrigues FA"
+  title: "Forecasting infectious diseases in Brazilian cities: integrating socio-economic and geographic data from related cities through a machine learning approach"
+  journal: "Chaos, Solitons &amp; Fractals"
+  year: 2024
+  themes: [t3]
+
+- id: scirep2023-autism
+  authors: "Alves CL, Toutain TGLO, Aguiar PC, Pineda AM, Oliveira Roster K, Thielemann C, Porto JAM, Rodrigues FA"
+  title: "Diagnosis of autism spectrum disorder based on functional brain networks and machine learning"
+  journal: "Scientific Reports"
+  year: 2023
+
+- id: plrev2023-data-rich-modeling
+  authors: "Oliveira Roster K"
+  title: "Data-rich modeling helps answer increasingly complex questions on variant and disease interactions"
+  journal: "Physics of Life Reviews"
+  year: 2023
+
+- id: csf2022-transfer-learning
+  authors: "Oliveira Roster K, Connaughton C, Rodrigues FA"
+  title: "Forecasting new diseases in low-data settings using transfer learning"
+  journal: "Chaos, Solitons and Fractals"
+  year: 2022
+  pmid: "35765601"
+  pmcid: "PMC9222348"
+  themes: [t3]
+
+- id: aje2022-dengue-forecasting
+  authors: "Oliveira Roster K, Connaughton C, Rodrigues FA"
+  title: "Machine-learning-based forecasting of dengue fever in Brazilian cities using epidemiologic and meteorological variables"
+  journal: "American Journal of Epidemiology"
+  year: 2022
+  pmid: "35584963"
+  themes: [t3]
+
+- id: plosone2022-ayahuasca-eeg
+  authors: "Alves CL, Cury RG, Oliveira Roster K, Pineda AM, Rodrigues FA, Thielemann C, Ciba M"
+  title: "Application of machine learning and complex network measures to an EEG dataset from ayahuasca experiments"
+  journal: "PLOS ONE"
+  year: 2022
+
+- id: jphyscomplex2022-eeg-deep-learning
+  authors: "Alves CL, Pineda AM, Oliveira Roster K, Thielemann C, Rodrigues FA"
+  title: "EEG functional connectivity and deep learning for automatic diagnosis of brain disorders: Alzheimer's disease and schizophrenia"
+  journal: "Journal of Physics: Complexity"
+  year: 2022
+
+- id: entropy2018-economic-fitness
+  authors: "Oliveira Roster K, Harrington L, Cader M"
+  title: "Country case studies in economic fitness: Mexico and Brazil"
+  journal: "Entropy"
+  year: 2018
+
+- id: wbwp2017-predictability-growth
+  authors: "Cristelli MCA, Tacchella A, Cader M, Oliveira Roster K, Pietronero L"
+  title: "On the predictability of growth"
+  journal: "World Bank Policy Research Working Paper"
+  year: 2017

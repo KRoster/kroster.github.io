@@ -1,0 +1,452 @@
+---
+# Custom typography and colour overrides for Minimal Mistakes.
+# Front matter (even empty) is required so Jekyll processes this file.
+---
+
+@charset "utf-8";
+
+/* ==========================================================================
+   1. TYPOGRAPHY
+   Set before the theme is imported. One sans-serif family throughout.
+   ========================================================================== */
+
+/* Owlstown's "Blazer" preset: Inter, with a red accent (see $primary-color). */
+$sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif !default;
+$serif: $sans-serif !default;
+$sans-serif-narrow: $sans-serif !default;
+$global-font-family: $sans-serif !default;
+$header-font-family: $sans-serif !default;
+$caption-font-family: $sans-serif !default;
+
+$doc-font-size: 16 !default;
+$doc-line-height: 1.65 !default;
+
+/* ==========================================================================
+   2. SKIN
+   ========================================================================== */
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+
+/* ==========================================================================
+   3. COLOURS
+   Declared after the skin so these values win. Near-black text, slate links.
+   ========================================================================== */
+
+$background-color: #ffffff;
+$text-color: #1c1e21;
+$muted-text-color: #61676d;
+$border-color: #e6e8ea;
+$code-background-color: #f6f7f8;
+
+$primary-color: #f44336;
+$link-color: #f44336;
+$link-color-hover: #c62828;
+$link-color-visited: #d94a3f;
+$link-color-active: #c62828;
+
+$masthead-link-color: $text-color;
+$masthead-link-color-hover: $link-color;
+$footer-background-color: #fafbfc;
+
+@import "minimal-mistakes";
+
+/* ==========================================================================
+   4. REFINEMENTS
+   ========================================================================== */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Masthead ------------------------------------------------------------- */
+
+.masthead {
+  border-bottom: 1px solid $border-color;
+}
+
+.masthead__inner-wrap {
+  padding: 0.9em 1em;
+}
+
+.site-title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.greedy-nav a {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* --- Page headers -------------------------------------------------------- */
+
+.page__title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.page__lead,
+.page__hero .page__lead {
+  font-weight: 300;
+}
+
+.page__hero--overlay {
+  padding: 5em 0.5em;
+
+  .page__title {
+    font-size: 2.4em;
+    text-shadow: none;
+  }
+
+  .page__lead {
+    font-size: 1.25em;
+    letter-spacing: 0.02em;
+    text-shadow: none;
+  }
+}
+
+.page__content {
+  h2 {
+    margin-top: 2.2em;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid $border-color;
+    font-size: 1.35em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  p {
+    margin-bottom: 1.2em;
+  }
+}
+
+/* --- About page: banner, then two columns -------------------------------- */
+/*
+   Left column  : square photo (centred in the column, overlapping the banner
+                  by half its height), name, role, links.
+   Right column : the prose.
+
+   The left column is a float and every other child of .page__content is given a
+   matching indent, so the prose stays in its own column instead of wrapping
+   underneath once the float ends. .page__content is itself floated by the theme,
+   so it establishes a block formatting context and contains the float's height.
+
+   Keep each photo size and its pull-up (half the size, negated) in step.
+*/
+$profile-photo: 200px;
+$profile-photo-pull: -100px;
+$profile-photo-small: 150px;
+$profile-photo-small-pull: -75px;
+
+$profile-column: 240px;
+$profile-gutter: 52px;
+
+body.home {
+  /* Close the theme's gap so the photo can straddle the banner edge exactly. */
+  .page__hero {
+    margin-bottom: 0;
+  }
+
+  .page__inner-wrap {
+    margin-top: 0;
+  }
+
+  .page {
+    max-width: 1010px;
+    margin-inline: auto;
+  }
+
+  .page__hero-image {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  /* The theme zeroes the margin of the first child of .page__content, so these
+     need to outrank `.page__content :first-child`. */
+  .page__content > .profile-intro {
+    float: inline-start;
+    width: $profile-column;
+    margin-top: $profile-photo-pull;
+  }
+
+  .page__content > *:not(.profile-intro) {
+    margin-inline-start: $profile-column + $profile-gutter;
+  }
+
+  /* Breathing room between the banner and the first line of prose. The photo
+     keeps its own pull-up, so the overlap is unaffected. */
+  .page__content > *:not(.profile-intro):first-of-type {
+    margin-top: 2.2em;
+  }
+}
+
+.profile-intro {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2.5em;
+  text-align: center;
+}
+
+.profile-intro__photo {
+  width: $profile-photo;
+  height: $profile-photo;
+  object-fit: cover;
+  border: 5px solid $background-color;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.profile-intro__name {
+  margin: 0.7em 0 0;
+  font-size: 1.35em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.profile-intro__role {
+  margin: 0.3em 0 0;
+  color: $muted-text-color;
+  font-size: 0.95em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Centred as a group, but the icons line up with each other. */
+.profile-intro__links {
+  display: inline-block;
+  margin: 1.3em 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: start;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+
+  li {
+    display: block;
+    margin: 0 0 0.6em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: $link-color;
+      border-bottom-color: currentColor;
+    }
+  }
+
+  i {
+    width: 1.15em;
+    margin-inline-end: 0.55em;
+    color: $muted-text-color;
+    text-align: center;
+  }
+}
+
+/* Below this width two columns are too cramped: stack them. */
+@media (max-width: 768px) {
+  body.home .page__hero-image {
+    height: 190px;
+  }
+
+  body.home .page__content > .profile-intro {
+    float: none;
+    width: auto;
+    margin-top: $profile-photo-small-pull;
+    margin-bottom: 2.1em;
+  }
+
+  body.home .page__content > *:not(.profile-intro) {
+    margin-inline-start: 0;
+  }
+
+  .profile-intro__photo {
+    width: $profile-photo-small;
+    height: $profile-photo-small;
+    border-width: 4px;
+  }
+
+  .profile-intro__links {
+    li {
+      display: inline-block;
+      margin: 0.25em 1.3em 0.25em 0;
+    }
+
+    li:last-child {
+      margin-inline-end: 0;
+    }
+  }
+}
+
+/* --- Author sidebar ------------------------------------------------------ */
+
+/* Square, to match the About page photo. */
+.author__avatar img {
+  border-radius: 2px;
+  border: 1px solid $border-color;
+}
+
+.author__name {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.author__bio {
+  color: $muted-text-color;
+}
+
+.author__urls {
+  li {
+    font-size: 0.85em;
+  }
+
+  a {
+    color: $text-color;
+
+    &:hover {
+      color: $link-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* --- Publication lists --------------------------------------------------- */
+
+.pub-list,
+.pub-list-plain {
+  margin: 1.5em 0 2.5em;
+  padding-left: 2.2em;
+  font-size: 0.92em;
+  line-height: 1.6;
+
+  li {
+    margin-bottom: 1.15em;
+    padding-left: 0.35em;
+  }
+
+  li::marker {
+    color: $muted-text-color;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.pub-list-plain {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    padding-left: 1.15em;
+    border-left: 2px solid $border-color;
+  }
+}
+
+/* Co-authors sit back; her own name and the title carry the weight. */
+.pub-authors {
+  color: $muted-text-color;
+
+  strong {
+    color: $text-color;
+    font-weight: 600;
+  }
+}
+
+.pub-title,
+.pub-journal {
+  color: $text-color;
+}
+
+.pub-link {
+  display: inline-block;
+  margin-left: 0.35em;
+  font-size: 0.82em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom-color: currentColor;
+    text-decoration: none;
+  }
+}
+
+.pub-note {
+  display: inline-block;
+  margin-left: 0.35em;
+  color: $muted-text-color;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+/* --- Table of contents --------------------------------------------------- */
+
+.toc {
+  font-size: 0.9em;
+  box-shadow: none;
+  border: 1px solid $border-color;
+
+  .nav__title {
+    background: #fafbfc;
+    color: $text-color;
+    font-weight: 600;
+  }
+}
+
+/* --- Wide pages ---------------------------------------------------------- */
+
+/* The theme leaves a 200px gutter where the author sidebar would sit, which
+   pushes a full-width page off centre. Reclaim it. */
+body.wide .page {
+  float: none;
+  width: 100%;
+}
+
+/* --- CV page ------------------------------------------------------------- */
+
+.cv-actions {
+  margin-bottom: 1.5em;
+}
+
+.cv-embed {
+  max-width: 900px;
+  height: calc(100vh - 260px);
+  min-height: 620px;
+  border: 1px solid $border-color;
+  background: #fafbfc;
+}
+
+@media (max-width: 600px) {
+  .cv-embed {
+    /* Mobile browsers do not embed PDFs reliably; the buttons above cover it. */
+    display: none;
+  }
+}
+
+/* --- Footer -------------------------------------------------------------- */
+
+.page__footer {
+  border-top: 1px solid $border-color;
+  font-size: 0.85em;
+}
+
+.page__footer footer {
+  padding-top: 1.5em;
+}

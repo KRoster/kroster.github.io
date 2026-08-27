@@ -1,0 +1,9 @@
+{%- comment -%}
+Full publication list. `reversed` makes the numbering count down the page, so the
+newest paper carries the highest number.
+{%- endcomment -%}
+<ol class="pub-list" reversed>
+{%- for pub in site.data.publications %}
+  <li id="{{ pub.id }}">{% include pub-cite.html pub=pub %}</li>
+{%- endfor %}
+</ol>
