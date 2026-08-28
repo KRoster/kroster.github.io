@@ -8,7 +8,6 @@ toc_label: "Lines of research"
 toc_sticky: true
 ---
 
-My research spans some of the following areas:
 
 ## 1. Preserving the useful lifespan of antibiotics
 
