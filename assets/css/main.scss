@@ -185,8 +185,7 @@ body.home {
 
   /* Breathing room between the banner and the first line of prose. The photo
      keeps its own pull-up, so the overlap is unaffected. */
-  .page__content > *:not(.profile-intro):first-of-type {
-    margin-top: 2.2em;
+  .page__content > .profile-intro + * {    margin-top: 2.2em;
   }
 }
 
