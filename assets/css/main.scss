@@ -141,12 +141,12 @@ body {
 
    Keep each photo size and its pull-up (half the size, negated) in step.
 */
-$profile-photo: 200px;
-$profile-photo-pull: -100px;
-$profile-photo-small: 150px;
-$profile-photo-small-pull: -75px;
+$profile-photo: 260px;
+$profile-photo-pull: -130px;
+$profile-photo-small: 170px;
+$profile-photo-small-pull: -85px;
 
-$profile-column: 240px;
+$profile-column: 300px;
 $profile-gutter: 52px;
 
 body.home {
